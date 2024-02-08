@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_form2_inherited" model="ir.ui.view">
+        <field name="name">project.task.form.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+        <field name="arch" type="xml">
+                <xpath expr="//label[@for='allocated_hours']" position="before">
+        <field name="allocated_hours"/>
+            </xpath>
+            <xpath expr="//label[@for='allocated_hours']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//label[@for='allocated_hours']" position="after">
+                <label for="tw_total_allocated_hours" invisible="not allow_timesheets" groups="hr_timesheet.group_hr_timesheet_user"/>
+            </xpath>
+            <xpath expr="//div[hasclass('text-nowrap')]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//div[hasclass('text-nowrap')]" position="after">
+                <div class="text-nowrap" invisible="not allow_timesheets" groups="hr_timesheet.group_hr_timesheet_user">
+                    <field name="tw_total_allocated_hours" class="oe_inline o_field_float_time" widget="timesheet_uom_no_toggle"/>
+                    <span invisible="subtask_count == 0">
+                        (incl. <field name="subtask_allocated_hours" nolabel="1" widget="timesheet_uom_no_toggle" class="oe_inline"/> on
+                        <span class="fw-bold text-dark"> Sub-tasks</span>)
+                    </span>
+                    <span invisible="not project_id">(<field name="progress" class="oe_inline" nolabel="1" widget="integer"/> %)</span>
+                </div>
+            </xpath>
+            <xpath expr="//group[@invisible='not analytic_account_active']/group/span[3]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//group[@invisible='not analytic_account_active']/group/span[3]" position="after">
+                <span class="o_td_label float-start my-1">
+                    <label class="fw-bold" for="tw_total_remaining_hours" string="Total Remaining Hours" invisible="tw_total_allocated_hours == 0.0 or encode_uom_in_days or tw_total_remaining_hours &lt; 0"/>
+                    <label class="fw-bold" for="tw_total_remaining_hours" string="Total Remaining Days" invisible="tw_total_allocated_hours == 0.0 or not encode_uom_in_days or tw_total_remaining_hours &lt; 0"/>
+                    <label class="fw-bold text-danger" for="tw_total_remaining_hours" string="Total Remaining Hours" invisible="tw_total_allocated_hours == 0.0 or encode_uom_in_days or tw_total_remaining_hours &gt;= 0"/>
+                    <label class="fw-bold text-danger" for="tw_total_remaining_hours" string="Total Remaining Days" invisible="tw_total_allocated_hours == 0.0 or not encode_uom_in_days or tw_total_remaining_hours &gt;= 0"/>
+                </span>
+            </xpath>
+            <xpath expr="//group[@invisible='not analytic_account_active']/group/field[@name='remaining_hours']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//group[@invisible='not analytic_account_active']/group/field[@name='remaining_hours']" position="after">
+                <field name="tw_total_remaining_hours" widget="timesheet_uom" class="oe_subtotal_footer_separator" invisible="tw_total_allocated_hours == 0.0" nolabel="1" decoration-danger="tw_total_remaining_hours &lt; 0"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_tree2_inherited" model="ir.ui.view">
+        <field name="name">project.task.tree.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_tree2_inherited"/>
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='progress']" position="after">
+                <field name="tw_currency_id" invisible="1" nolabel="1"/>
+                <field name="tw_initially_planned_budget" widget="monetary" sum="Initially Planned Budget" options="{'currency_field': 'tw_currency_id'}" optional="show"/>
+                <field name="tw_budget_spent" widget="monetary" sum="Budget Spent" options="{'currency_field': 'tw_currency_id'}" optional="show"/>
+                <field name="tw_remaining_budget" widget="monetary" sum="Remaining Budget" options="{'currency_field': 'tw_currency_id'}" optional="show"/>
+                <field name="tw_budget_progress" widget="progressbar" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tw_consulting_workflow_optimization
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-30 12:08+0000\n"
+"PO-Revision-Date: 2024-01-30 12:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tw_consulting_workflow_optimization
+#: model_terms:ir.ui.view,arch_db:tw_consulting_workflow_optimization.view_task_form2_inherited
+msgid "(incl."
+msgstr "(inkl."
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,field_description:tw_consulting_workflow_optimization.field_project_task__tw_budget_spent
+#: model_terms:ir.ui.view,arch_db:tw_consulting_workflow_optimization.view_task_tree2_inherited
+msgid "Budget Spent"
+msgstr "Ausgegebenes Budget"
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,field_description:tw_consulting_workflow_optimization.field_project_task__tw_budget_progress
+msgid "Budget Status"
+msgstr "Budget Status"
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,field_description:tw_consulting_workflow_optimization.field_project_task__tw_currency_id
+msgid "Currency"
+msgstr "Währung"
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,field_description:tw_consulting_workflow_optimization.field_project_task__tw_initially_planned_budget
+#: model_terms:ir.ui.view,arch_db:tw_consulting_workflow_optimization.view_task_tree2_inherited
+msgid "Initially Planned Budget"
+msgstr "Ursprünglich geplantes Budget"
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,field_description:tw_consulting_workflow_optimization.field_project_task__tw_remaining_budget
+#: model_terms:ir.ui.view,arch_db:tw_consulting_workflow_optimization.view_task_tree2_inherited
+msgid "Remaining Budget"
+msgstr "Verbliebenes Budget"
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model,name:tw_consulting_workflow_optimization.model_project_task
+msgid "Task"
+msgstr "Aufgabe"
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,help:tw_consulting_workflow_optimization.field_project_task__tw_initially_planned_budget
+msgid ""
+"This value is composed of the Initially Allocated Hours and the Unit Price "
+"on the Sales Order Lines."
+msgstr ""
+"Dieser Wert setzt sich zusammen aus den ursprünglich geplanten Stunden und "
+"dem Stückpreis auf den Kundenauftragszeilen."
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,help:tw_consulting_workflow_optimization.field_project_task__tw_remaining_budget
+msgid ""
+"This value is composed of the diefference between the Initially Planned "
+"Budget and the Budget Spent."
+msgstr ""
+"Dieser Wert ergibt sich aus der Differenz zwischen dem ursprünglich "
+"geplanten Budget und dem ausgegebenen Budget."
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,help:tw_consulting_workflow_optimization.field_project_task__tw_budget_spent
+msgid ""
+"This value is composed of the hours booked and the Unit Price on the Sales "
+"Order Lines."
+msgstr ""
+"Dieser Wert setzt sich aus den gebuchten Stunden und dem Stückpreis in den "
+"Auftragszeilen zusammen."
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,field_description:tw_consulting_workflow_optimization.field_project_task__tw_total_allocated_hours
+msgid "Total Allocated Time"
+msgstr "Total Zugewiesene Zeit"
+
+#. module: tw_consulting_workflow_optimization
+#: model_terms:ir.ui.view,arch_db:tw_consulting_workflow_optimization.view_task_form2_inherited
+msgid "Total Remaining Days"
+msgstr "Total Verbliebene Tage"
+
+#. module: tw_consulting_workflow_optimization
+#: model:ir.model.fields,field_description:tw_consulting_workflow_optimization.field_project_task__tw_total_remaining_hours
+#: model_terms:ir.ui.view,arch_db:tw_consulting_workflow_optimization.view_task_form2_inherited
+msgid "Total Remaining Hours"
+msgstr "Total Verbliebene Stunden"
+
+#. module: tw_consulting_workflow_optimization
+#: model_terms:ir.ui.view,arch_db:tw_consulting_workflow_optimization.view_task_form2_inherited
+msgid ""
+"on\n"
+"                        <span class=\"fw-bold text-dark\"> Sub-tasks</span>)"
+msgstr ""
+"auf\n"
+"                        <span class=\"fw-bold text-dark\"> Teilaufgaben</span>)"
